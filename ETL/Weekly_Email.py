@@ -17,6 +17,24 @@ def weekly_email_function():
     cur = conn.cursor()
     today = datetime.today().date()
     six_days_ago = today - timedelta(days=6)
+    # with open('D:\SEMESTER 6\BI\JCOMP\yash.txt', 'r') as file:
+    #     data = file.read()
+    # data1=[[data]]
+    my_file = open("D:\SEMESTER6\BI\JCOMP\yash.txt", "r")
+    list=[]
+    data = my_file.read()
+    for i in range(15):
+        list.append(data[55*i:55*(i+1)])
+
+    # replacing end of line('/n') with ' ' and
+    # splitting the text it further when '.' is seen.
+    data_into_list = data.replace(' ', ' ').split(".")
+
+    # printing the data
+    # print(data_into_list[0])
+    my_file.close()
+
+
 
     # Top 5 Songs by Time Listened (MIN)
     top_5_songs_min = [['Song Name', 'Time (Min)']]
@@ -64,7 +82,7 @@ def weekly_email_function():
     password = "sjjfzfxthnrtozdf"
 
     sender_email = "yrbhootda@gmail.com"
-    receiver_email = "kulkarnianiket1605@gmail.com"
+    receiver_email = "yrbhootda@gmail.com"
 
     message = MIMEMultipart("alternative")
     message["Subject"] = f"Spotify - Weekly Roundup - {today}"
@@ -112,16 +130,33 @@ def weekly_email_function():
             Lastly your top decades are as follows:
             </h4>
             {tabulate(top_decade_played, tablefmt='html')}
+            <h4> Your top recommendations</h4>
+            <table>
+            <tr> <th> Track Name </th></tr>
+            <tr> <td> {list[0]} </td> </tr>
+            <tr> <td> {list[1]} </td> </tr>
+            <tr> <td> {list[2]} </td> </tr>
+            </table>
+            # {list[1]}
+            # </h5>
             </p>
+            
         </body>
     </html>"""
 
     part1 = MIMEText(text, "plain")
     part2 = MIMEText(html, "html")
+    part3 = MIMEText(data, "plain")
 
     message.attach(part1)
+    # message.attach(part3)
     message.attach(part2)
 
+    filename = "Recommendation"
+    # f = file(filename)
+    attachment = MIMEText(data)
+    attachment.add_header('Content-Disposition', 'attachment', filename=filename)           
+    message.attach(attachment)
     context = ssl.create_default_context()
     with smtplib.SMTP_SSL("smtp.gmail.com", port, context=context) as server:
         server.login("yrbhootda@gmail.com", password)

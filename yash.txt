@@ -1,0 +1,16 @@
+                                 Kerina
+                                Higher
+                          Fun, Fun, Fun
+     For Emily, Whenever I May Find Her
+                             If I Knew
+                         Ignacio Lopez
+                   Fun, Fun, Fun (Mono)
+                                Capsize
+                Smoke Gets In Your Eyes
+               Smoke Gets In Your Eyes
+                         Birthday Cake
+                         The Happy Song
+                           Why Bother?
+            Surfin' U.S.A. - Remastered
+           Surfin' U.S.A. - Remastered
+Name: track_name, dtype: object
