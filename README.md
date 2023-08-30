@@ -1,14 +1,14 @@
 # Spotify-ETL-Pipeline
-# Data Engineering Project-2|Building Spotify ETL using Python and Airflow
+# Building Spotify ETL using Python and Recommendation Engine
 
-Create an Extract Transform Load pipeline using python and automate with airflow.
+Create an Extract Transform Load pipeline using python , automate with airflow  , develop a Spotify playlist using recommendation engine.
 
 ![](https://miro.medium.com/max/749/1*dm8hVrPTPMenyRY4uJiBIA@2x.png)
 
 
 # Problem Statement:
 
-We need to use Spotify’s API to read the data and perform some basic transformations and Data Quality checks finally will load the retrieved data to PostgreSQL DB and then automate the entire process through airflow.  **Est.Time:**[4–7 Hours]
+We need to use Spotify’s API to read the data and perform some basic transformations and Data Quality checks finally will load the retrieved data to PostgreSQL DB and then automate the entire process through airflow. Develop a KNN based recommendation engine and create a personalised playlist for each user.  **Est.Time:**[4–7 Hours]
 
 # Tech Stack / Skill used:
 
@@ -17,6 +17,7 @@ We need to use Spotify’s API to read the data and perform some basic transform
 3.  Docker
 4.  Airflow
 5.  PostgreSQL
+6.  Machine Learning
 
 # Prerequisite:
 
@@ -25,20 +26,8 @@ We need to use Spotify’s API to read the data and perform some basic transform
 3.  Intermediate Python and SQL
 4.  A basic understanding of Airflow  [this](https://www.youtube.com/watch?v=AHMm1wfGuHE&t=705s) will help
 
-# Learning Outcomes:
-
-1.  Understand how to interact with API to retrieve data
-2.  Handling Dataframe in pandas
-3.  Setting up Airflow and PostgreSQL through Docker-Compose.
-4.  Learning to Create DAGs in Airflow
-
-# Introduction:
-
-This is a beginner-friendly project to get started with building a simple pipeline and automating through airflow. First, we will focus on entirely building the pipeline and then extend the project by combining it with Airflow.
 
 # Building ETL Pipeline:
-
-**Dataset:** In this project, we are using Spotify’s API so please go ahead and create an account for yourself. After creating the account head to this  [page](https://developer.spotify.com/console/get-recently-played/?limit=&after=&before=). Now you will be able to see a get token icon click that and select user recently played and click get token.
 
 ## Extract.py
 
